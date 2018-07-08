@@ -11,10 +11,21 @@ public class Anagram {
 			Scanner scan = new Scanner(new FileReader("src/words.txt"));
 
 			ArrayList<String> array = new ArrayList<String>();
+			
+			int num = 0;
 
 			while (scan.hasNextLine() == true) {
+				String line = scan.nextLine();
+				
 				array.add(scan.nextLine());
+				if (array.get(num).equals(line)) {
+					System.out.println("test");
+				}
+				
 
+		
+			
+				
 			}
 
 		} catch (Exception e) {
@@ -25,6 +36,5 @@ public class Anagram {
 		// scan.hasNextLine();
 
 	}
-	
 
 }

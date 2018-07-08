@@ -3,7 +3,7 @@ package _02_diy_array_list;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-
+import java.util.ArrayList;
 public class CustomArrayListTest {
 
 	@Test
@@ -42,7 +42,7 @@ public class CustomArrayListTest {
 		list.add('G');
 		list.add('O');
 		
-		list.addAt(2, 'E');
+	//	list.addAt(2, 'E');
 		
 		if(list.get(0) != 'D') fail("list.get(0) returning improper value.");
 		if(list.get(1) != 'I') fail("list.get(1) returning improper value.");
