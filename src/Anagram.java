@@ -1,9 +1,6 @@
-import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
@@ -18,29 +15,41 @@ public class Anagram {
 			ArrayList<String> array = new ArrayList<String>();
 
 			String word = JOptionPane.showInputDialog("Type in a word");
-			scan.nextLine().toLowerCase();
-			
-			String sc = scan.toString();
-			char[] noMom = sc.toCharArray();
-			Arrays.sort(noMom);
-			String more = new String(noMom);
-			System.out.println(more);
-			
+
+			/*
+			 * String sc = scan.toString(); char[] noMom = sc.toCharArray();
+			 * Arrays.sort(noMom); String more = new String(noMom);
+			 * System.out.println(more);
+			 */
 			char[] chars = word.toCharArray();
 			Arrays.sort(chars);
 			String mod = new String(chars);
 			System.out.println(mod);
-			
-			while (scan.hasNextLine() == true) {
-				if (scan.nextLine().length() == (mod.length())) {
-					
-					array.add(scan.nextLine());
+			/*
+			 * char[] war = list.toCharArray(); Arrays.sort(war); String more = new
+			 * String(list); System.out.println(more);
+			 */
+
+			/*
+			 * 
+			 * 
+			 * 
+			 * char[] alph = more.toCharArray(); Arrays.sort(alph); String also = new
+			 * String(alph);
+			 */
+
+			for (int j = 0; j < 235886; j++) {
+				String more = scan.nextLine();
+
+				if (mod.length() == more.length()) {
+					System.out.println(j);
+					array.add(more);
 
 				}
 
 			}
 
-			System.out.println(array);
+			scan.close();
 
 			// if (array) {
 			// System.out.println("test");
