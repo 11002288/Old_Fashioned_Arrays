@@ -14,6 +14,8 @@ public class Anagram {
 
 			ArrayList<String> array = new ArrayList<String>();
 
+			ArrayList<String> array2 = new ArrayList<String>();
+
 			String word = JOptionPane.showInputDialog("Type in a word");
 
 			/*
@@ -24,7 +26,8 @@ public class Anagram {
 			char[] chars = word.toCharArray();
 			Arrays.sort(chars);
 			String mod = new String(chars);
-			System.out.println(mod);
+			
+
 			/*
 			 * char[] war = list.toCharArray(); Arrays.sort(war); String more = new
 			 * String(list); System.out.println(more);
@@ -42,13 +45,33 @@ public class Anagram {
 				String more = scan.nextLine();
 
 				if (mod.length() == more.length()) {
-					System.out.println(j);
 					array.add(more);
+					char[] card = more.toCharArray();
+					Arrays.sort(card);
+					String nod = new String(card);
+
+					array2.add(nod);
 
 				}
 
 			}
+			int amount = 0;
 
+			for (int i = 0; i < array.size(); i++) {
+
+				if (array2.get(i).equals(mod)) {
+					array2.add(array.get(i));
+					amount += 1;
+					System.out.println(array.get(i));
+
+				}
+			}
+			if (amount == 1) {
+
+				System.out.println(word + " has " + amount + " anagram");
+			} else {
+				System.out.println(word + " has " + amount + " anagrams");
+			}
 			scan.close();
 
 			// if (array) {
