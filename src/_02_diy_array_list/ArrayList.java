@@ -7,11 +7,11 @@ import java.util.ListIterator;
 
 public class ArrayList<E> implements List {
 	E[] list;
-	
+
 	public ArrayList() {
 
 		list = (E[]) new Object[0];
-		
+
 	}
 
 	@Override
@@ -55,20 +55,20 @@ public class ArrayList<E> implements List {
 	@Override
 	public boolean add(Object e) {
 		// TODO Auto-generated method stub
-		E[] list2 = (E[]) new Object[list.length+1];
+		E[] list2 = (E[]) new Object[list.length + 1];
 		for (int i = 0; i < list.length; i++) {
-			list2[i]= list[i];
+			list2[i] = list[i];
 		}
-		list2[list2.length-1] = (E) e;
+		list2[list2.length - 1] = (E) e;
 		list = list2;
-		
+
 		return true;
 	}
 
 	@Override
 	public boolean remove(Object o) {
 		// TODO Auto-generated method stub
-		
+
 		return false;
 	}
 
@@ -114,26 +114,41 @@ public class ArrayList<E> implements List {
 		for (int i = 0; i < list.length; i++) {
 			System.out.println(list[i]);
 		}
-		return (E)list[index];
+		return (E) list[index];
 	}
 
 	@Override
 	public Object set(int index, Object element) {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < list.length; i++) {
-			if (index==i) {
-				list[i]=(E) element;
+			if (index == i) {
+				list[i] = (E) element;
 			}
 		}
-		
+
 		return list[index];
 	}
 
 	@Override
 	public void add(int index, Object element) {
 		// TODO Auto-generated method stub
-		
-		
+
+		E[] list2 = (E[]) new Object[list.length + 1];
+		for (int i = 0; i < list2.length; i++) {
+
+			if (i == index) {
+				list2[i] = (E) (element);
+
+			} else if (i < index) {
+				list2[i] = list[i];
+			} else if (i > index) {
+				list2[i] = list[i - 1];
+
+			}
+
+		}
+		list = list2;
+
 	}
 
 	@Override
