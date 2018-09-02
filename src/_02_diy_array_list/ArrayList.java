@@ -31,7 +31,18 @@ public class ArrayList<E> implements List {
 	@Override
 	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
-		return false;
+		boolean real = false;
+	
+		for (int i = 0; i < list.length; i++) {
+			
+			if (list[i].equals(o)) {
+				real = true;
+			
+				
+			
+		}
+		}
+		return real;
 	}
 
 	@Override
@@ -68,6 +79,7 @@ public class ArrayList<E> implements List {
 	@Override
 	public boolean remove(Object o) {
 		// TODO Auto-generated method stub
+		
 
 		return false;
 	}
@@ -154,7 +166,23 @@ public class ArrayList<E> implements List {
 	@Override
 	public Object remove(int index) {
 		// TODO Auto-generated method stub
-		return null;
+		boolean correct = false;
+		E[] list2 = (E[]) new Object[list.length - 1];
+		for (int i = 0; i < list2.length; i++) {
+			
+			if (i == index) {
+				list2[i] = list[i + 1];
+				correct = true;
+			} else if(correct==false) {
+				//correct = false;
+				list2[i]=list[i];
+			}else if (correct==true) {
+				list2[i]=list[i+1];
+			}
+		}
+		list=list2;
+
+		return list2;
 	}
 
 	@Override
